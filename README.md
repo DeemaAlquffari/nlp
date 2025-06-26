@@ -33,7 +33,10 @@ The model is a **Seq2Seq transformer** from the AraT5 family, trained specifical
 
 
 
-📊 Evaluation Results
-Metric	Before Fine-tuning	After Fine-tuning
-BLEU	0.08	                0.20
+## 📊 Evaluation Results
+
+| Metric | Before Fine-tuning | After Fine-tuning |
+|--------|--------------------|-------------------|
+| BLEU   | 0.08               | 0.20              |
+
 
