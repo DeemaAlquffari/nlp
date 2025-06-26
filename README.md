@@ -12,7 +12,6 @@ Enable automatic and accurate translation of informal Arabic dialects (like Saud
 
 - Arabic NLP preprocessing
 - Chatbot normalization
-- Educational tools
 
 ## 🧠 Model Used
 
@@ -32,27 +31,9 @@ The model is a **Seq2Seq transformer** from the AraT5 family, trained specifical
 - Gradio (for demo interface)
 - Google Colab
 
-## ⚙️ How to Use
 
-You can use the model by running the Gradio demo:
 
-```python
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
-import gradio as gr
-
-tokenizer = AutoTokenizer.from_pretrained("path_to_model")
-model = AutoModelForSeq2SeqLM.from_pretrained("path_to_model")
-
-def translate(text):
-    input_text = "translate dialect to MSA: " + text
-    inputs = tokenizer(input_text, return_tensors="pt", truncation=True, padding=True)
-    output = model.generate(**inputs, max_new_tokens=100)
-    return tokenizer.decode(output[0], skip_special_tokens=True)
-
-gr.Interface(fn=translate, inputs="text", outputs="text", title="Arabic Dialect to MSA").launch()
-
-aluation Results
+📊 Evaluation Results
 Metric	Before Fine-tuning	After Fine-tuning
-BLEU	0.08	0.20
-
+BLEU	0.08	                0.20
 
